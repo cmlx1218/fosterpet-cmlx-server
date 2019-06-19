@@ -1,0 +1,9 @@
+server:
+  port: 9290
+
+spring:
+  profiles:
+    active: @profileActive@
+  application:
+    name: cmlx-config
+

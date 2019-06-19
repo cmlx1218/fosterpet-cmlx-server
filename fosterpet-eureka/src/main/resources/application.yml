@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: cmlx-eureka
+  profiles:
+    active: @profileActive@
+server:
+  port: 9288

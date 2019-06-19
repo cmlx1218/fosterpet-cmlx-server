@@ -1,0 +1,8 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: @defaultZone@
+    register-with-eureka: false
+    fetch-registry: false

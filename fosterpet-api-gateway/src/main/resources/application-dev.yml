@@ -1,0 +1,35 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: @defaultZone@
+    registry-fetch-interval-seconds: 10   #每隔10秒拉取服务注册信息
+
+#zuul:
+#  semaphore:
+#    max-semaphores: 15000  #信号量，默认100
+#  SendErrorFilter:
+#    post:
+#      disable: true
+#    host:
+#      connect-timeout-millis: 10000
+#      socket-timeout-millis: 60000
+#  routes:
+
+
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+
+ribbon:
+  eager-load:
+    enabled: true   #饥饿加载
+  # 设置远程调用熔断超时时间
+  ConnectTimeout: 10000 # 请求连接超时时间
+  ReadTimeout: 10000 # 请求处理的超时时间
