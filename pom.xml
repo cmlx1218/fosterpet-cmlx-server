@@ -10,8 +10,15 @@
     <groupId>com.fosterpet.cmlx</groupId>
     <artifactId>fosterpet-cmlx-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>fosterpet-cmlx-server</name>
     <description>Demo project for Spring Boot</description>
+
+    <modules>
+        <module>fosterpet-api-gateway</module>
+        <module>fosterpet-eureka</module>
+        <module>fosterpet-config</module>
+    </modules>
 
 <!--    <repositories>
         <repository>

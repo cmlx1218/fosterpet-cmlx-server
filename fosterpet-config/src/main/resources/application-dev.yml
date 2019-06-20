@@ -1,24 +1,25 @@
-#spring:
-#  cloud:
-#    config:
-#      server:
-#        git:
-#          uri: http://106.14.223.238:90/server/aimymusic-alita-config.git    # 配置git仓库的地址
-#          search-paths: config-repo/oauth-center,config-repo/public-provider,config-repo/resource-provider,config-repo/ucenter-provider,config-repo/dance-provider,config-repo/app-provider    # git仓库地址下的相对地址，可以配置多个，用,分割。
-#          username: yr9025                                      # git仓库的账号
-#          password: xyz123456                                   # git仓库的密码
-#          basedir: config-repo
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://github.com/cmlx1218/fosterpet-cmlx-config.git/    # 配置git仓库的地址
+          search-paths: config-repo/test-provider    # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: cmlx1218 # git仓库的账号
+          password: zq861500116 # git仓库的密码
 
 
 eureka:
   client:
     serviceUrl:
       defaultZone: @defaultZone@ #注册中心eurka地址
+  instance:
+    prefer-ip-address: @addressIP@
+    ip-address: ${spring.cloud.client.ip-address}:${server.port}
 
-
-#endpoints:
-#  shutdown:
-#    enabled: true #开启优雅关闭方式
-#management:
-#  security:
-#    enabled: false
+endpoints:
+  shutdown:
+    enabled: true #开启优雅关闭方式
+management:
+  security:
+    enabled: false
