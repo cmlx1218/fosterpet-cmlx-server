@@ -21,5 +21,4 @@ public class FosterpetConfigApplication extends WebMvcConfigurerAdapter {
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer.ignoreAcceptHeader(true).defaultContentType(MediaType.APPLICATION_JSON);
     }
-
 }
