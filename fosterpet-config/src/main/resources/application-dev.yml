@@ -4,7 +4,7 @@ spring:
       server:
         git:
           uri: https://github.com/cmlx1218/fosterpet-cmlx-config/    # 配置git仓库的地址
-          search-paths: config-repo/test-provider     # git仓库地址下的相对地址，可以配置多个，用,分割。
+          search-paths: config-repo/test-provider,config-repo/test01-provider     # git仓库地址下的相对地址，可以配置多个，用,分割。
           username: cmlx1218 # git仓库的账号
           password: zq861500116 # git仓库的密码
 
