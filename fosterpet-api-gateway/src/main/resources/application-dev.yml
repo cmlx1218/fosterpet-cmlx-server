@@ -3,6 +3,13 @@ eureka:
     serviceUrl:
       defaultZone: @defaultZone@
     registry-fetch-interval-seconds: 10   #每隔10秒拉取服务注册信息
+  instance:
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
+    instance-id: cmlx1218.com  # 在信息列表时显示主机名称
+    prefer-ip-address: true     # 访问的路径变为IP地址
+
+
 
 #zuul:
 #  semaphore:
@@ -16,34 +23,48 @@ eureka:
 #  routes:
 
 
+#zuul:
+#  semaphore:
+#    max-semaphores: 15000  #信号量,默认100
+#  SendErrorFilter:
+#    post:
+#      disable: true
+#  host:
+#    connect-timeout-millis: 10000
+#    socket-timeout-millis: 60000
+#  routes:
+#    cmlx-test-provider:
+#      path: /test/**
+#      service-id: cmlx-test-provider
+#    cmlx-test01-provider:
+#      path: /test01/**
+#      service-id: cmlx-test01-provider
+
+
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 60000
+
+
+#ribbon:
+#  eager-load:
+#    enabled: true   #饥饿加载
+#  # 设置远程调用熔断超时时间
+#  ConnectTimeout: 10000 # 请求连接超时时间
+#  ReadTimeout: 10000 # 请求处理的超时时间
 zuul:
-  semaphore:
-    max-semaphores: 15000  #信号量,默认100
-  SendErrorFilter:
-    post:
-      disable: true
-  host:
-    connect-timeout-millis: 10000
-    socket-timeout-millis: 60000
+  ignored-services:
+    "*"
   routes:
+    test01:
+      path: /zuul-test01/**
+      serviceId: cmlx-test01-provider
     test:
-      path: /user/**
+      path: /zuul-test/**
       serviceId: cmlx-test-provider
 
-
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-
-
-ribbon:
-  eager-load:
-    enabled: true   #饥饿加载
-  # 设置远程调用熔断超时时间
-  ConnectTimeout: 10000 # 请求连接超时时间
-  ReadTimeout: 10000 # 请求处理的超时时间

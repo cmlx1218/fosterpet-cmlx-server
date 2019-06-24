@@ -25,16 +25,16 @@
             </properties>
         </profile>
 
-        <profile>
-            <id>alidev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <profileActive>alidev</profileActive>
-                <defaultZone>http://127.0.0.1:9288/eureka/</defaultZone>
-            </properties>
-        </profile>
+<!--        <profile>-->
+<!--            <id>alidev</id>-->
+<!--            <activation>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
+<!--            <properties>-->
+<!--                <profileActive>alidev</profileActive>-->
+<!--                <defaultZone>http://127.0.0.1:9288/eureka/</defaultZone>-->
+<!--            </properties>-->
+<!--        </profile>-->
     </profiles>
 
 
